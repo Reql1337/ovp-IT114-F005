@@ -1,12 +1,12 @@
 package M2; // Important: the package corresponds to the folder it resides in
-import java.util.Arrays;
+import java.util.Arrays; 
 
-// usage
+// usag
 // compile: javac Module2/Problem1.java
 // run: java Module2.Problem1
 
 public class Problem1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         //Don't edit anything here
         int[] a1 = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int[] a2 = new int[]{0, 1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
