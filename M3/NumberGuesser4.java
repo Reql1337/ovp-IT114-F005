@@ -132,6 +132,36 @@ public class NumberGuesser4 {
         } else {
             System.out.println("That's wrong");
             strikes++;
+        
+
+        // #4 ovp 10/1/2024 COLD WARM HOT Indicator + Higher/Lower Hint
+
+            if (guess > number) 
+            {
+                System.out.println("You guessed too high.");
+            } else if (guess < number) 
+            {
+                System.out.println("You guessed too low.");
+            }
+            
+            int indicator = Math.abs(number - guess);
+           
+            if (indicator == 0) 
+            {
+                System.out.println("You've guessed the number!");
+            } 
+            else if (indicator >= 10) 
+            {
+                System.out.println("You are cold. [10+ numbers away]");
+            } 
+            else if (indicator >= 5) 
+            {
+                System.out.println("You are warm. [5+ numbers away]");
+            } 
+            else if (indicator >= 2) 
+            {
+                System.out.println("You are hot. [2+ numbers away]");
+            } 
             if (strikes >= maxStrikes) {
                 lose();
                 pickNewRandom = true;

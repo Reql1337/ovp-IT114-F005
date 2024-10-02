@@ -33,7 +33,7 @@ public class Problem2 {
         {
             total += num;
         }
-       
+        // ovp 9/23/24
         //set the double to a string variable
         //TODO ensure rounding is to two decimal places (i.e., 0.10, 0.01, 1.00)
         System.out.println("Displaying output as two decimal places..");

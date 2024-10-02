@@ -24,6 +24,7 @@ public class Problem1 {
         //hint: use the arr variable; don't diretly use the a1-a4 variables
         // Goal: output only add *values* of each passed array
         //TODO add/edit code here
+        // ovp (9/23/24)
         System.out.println("Printing my odd numbers:");
       
         for (int num : arr)
