@@ -1,4 +1,4 @@
-package Project;
+package Project.server;
 
 import java.net.Socket;
 import java.util.Objects;

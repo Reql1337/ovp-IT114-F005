@@ -1,4 +1,4 @@
-package Project;
+package Project.common;
 
 /**
  * Utility to attempt to provide colored text in the terminal.

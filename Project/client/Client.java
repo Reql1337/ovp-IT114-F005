@@ -1,4 +1,4 @@
-package Project;
+package Project.client;
 
 import Project.TextFX.Color;
 import java.io.IOException;

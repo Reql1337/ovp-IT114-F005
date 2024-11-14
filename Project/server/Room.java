@@ -1,6 +1,7 @@
-package Project;
+package Project.server;
 
 import java.util.concurrent.ConcurrentHashMap;
+
 
 public class Room implements AutoCloseable{
     private String name;// unique name of the Room
