@@ -1,5 +1,6 @@
 package Project;
 
+import Project.TextFX.Color;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -10,8 +11,6 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import Project.TextFX.Color;
 
 /**
  * Demoing bi-directional communication between client and server in a
