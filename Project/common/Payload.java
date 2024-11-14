@@ -6,7 +6,6 @@ public class Payload implements Serializable {
     private PayloadType payloadType;
     private long clientId;
     private String message;
-    private int numofSides;
 
     
 

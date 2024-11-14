@@ -1,6 +1,12 @@
 package Project.client;
 
+import Project.ConnectionPayload;
+import Project.TextFX;
 import Project.TextFX.Color;
+import Project.common.Payload;
+import Project.common.PayloadType;
+import Project.common.RollPayload;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -156,6 +162,13 @@ public enum Client {
                         sendJoinRoom(commandValue);
                         wasCommand = true;
                         break;
+                    case "roll":
+                    rollCommand(commandValue);
+                        wasCommand = true;              // ovp 11/13
+                        break;
+                    case "flip":
+                        wasCommand = true;
+                        break;            
                     // Note: these are to disconnect, they're not for changing rooms
                     case DISCONNECT:
                     case LOGOFF:
@@ -170,7 +183,33 @@ public enum Client {
         return false;
     }
 
-    // send methods to pass data to the ServerThread
+    private void rollCommand(String val) 
+    {
+
+        if (val.contains("d")) 
+        {
+            String[] parts = val.split("d");
+            int numDice = Integer.parseInt(parts[0]);
+            int numSides = Integer.parseInt(parts[1]);
+            RollPayload rollPayload = new RollPayload(numSides, numDice);
+            send(rollPayload);
+            System.out.println("Rolling " + numDice + " dice with " + numSides + " sides.");        // ovp 11/13
+        } 
+        else 
+        {
+
+            int numSides = Integer.parseInt(val);
+            RollPayload rollPayload = new RollPayload(numSides, 1);  
+            send(rollPayload);
+            System.out.println("Rolling a " + numSides + " sided die.");
+        }
+    }
+    
+
+
+
+
+
 
     /**
      * Sends the room name we intend to create

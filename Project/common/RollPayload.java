@@ -28,6 +28,6 @@ public class RollPayload extends Payload
     @Override
     public String toString()
     {
-        return String.format("%d rolled %d-sided dice", NumofSides, NumofDice);
+        return String.format("%d rolled %d-sided dice", NumofDice, NumofSides);
     }
 }
