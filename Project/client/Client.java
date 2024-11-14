@@ -189,27 +189,28 @@ public enum Client {
         if (val.contains("d")) 
         {
             String[] parts = val.split("d");
+
             int numDice = Integer.parseInt(parts[0]);
+
             int numSides = Integer.parseInt(parts[1]);
+
             RollPayload rollPayload = new RollPayload(numSides, numDice);
             send(rollPayload);
+
             System.out.println("Rolling " + numDice + " dice with " + numSides + " sides.");        // ovp 11/13
         } 
         else 
         {
 
             int numSides = Integer.parseInt(val);
+
             RollPayload rollPayload = new RollPayload(numSides, 1);  
             send(rollPayload);
+            
             System.out.println("Rolling a " + numSides + " sided die.");
         }
     }
     
-
-
-
-
-
 
     /**
      * Sends the room name we intend to create
