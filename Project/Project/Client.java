@@ -1,12 +1,6 @@
-package Project.client;
+package Project;
 
-import Project.ConnectionPayload;
-import Project.TextFX;
 import Project.TextFX.Color;
-import Project.common.Payload;
-import Project.common.PayloadType;
-import Project.common.RollPayload;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -43,6 +37,8 @@ public enum Client {
     private final String LOGOFF = "logoff";
     private final String LOGOUT = "logout";
     private final String SINGLE_SPACE = " ";
+    private final String FLIP = "flip";
+    private final String ROLL = "roll";
 
     // needs to be private now that the enum logic is handling this
     private Client() {
@@ -162,11 +158,12 @@ public enum Client {
                         sendJoinRoom(commandValue);
                         wasCommand = true;
                         break;
-                    case "roll":
+                    case ROLL:
                     rollCommand(commandValue);
                         wasCommand = true;              // ovp 11/13
                         break;
-                    case "flip":
+                    case FLIP:
+                    flipCommand();
                         wasCommand = true;
                         break;            
                     // Note: these are to disconnect, they're not for changing rooms
@@ -206,11 +203,19 @@ public enum Client {
 
             RollPayload rollPayload = new RollPayload(numSides, 1);  
             send(rollPayload);
-            
+
             System.out.println("Rolling a " + numSides + " sided die.");
         }
     }
     
+    private void flipCommand()
+    {
+         
+        Payload flipPayload = new Payload();                // ovp 11/13
+        flipPayload.setPayloadType(PayloadType.FLIP);
+        flipPayload.setMessage("Flipping coin:");
+        send(flipPayload);
+    }
 
     /**
      * Sends the room name we intend to create
@@ -220,7 +225,7 @@ public enum Client {
     private void sendCreateRoom(String room) {
         Payload p = new Payload();
         p.setPayloadType(PayloadType.ROOM_CREATE);
-        p.setMessage(room);
+        p.setMessage(room);                                     
         send(p);
     }
 
@@ -343,7 +348,7 @@ public enum Client {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error in listentToInput()");
+            System.out.println("Error in listenToInput()");
             e.printStackTrace();
         }
         System.out.println("listenToInput thread stopped");

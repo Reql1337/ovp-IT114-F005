@@ -1,4 +1,4 @@
-package Project.common;
+package Project;
 
 public class RollPayload extends Payload
  {
@@ -17,7 +17,7 @@ public class RollPayload extends Payload
     
     public int getNumSides() 
     {
-        return NumofSides;
+        return NumofSides;          //ovp 11/13
     }
 
     public int getNumDice() 

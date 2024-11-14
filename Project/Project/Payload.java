@@ -1,4 +1,4 @@
-package Project.common;
+package Project;
 
 import java.io.Serializable;
 
@@ -33,7 +33,7 @@ public class Payload implements Serializable {
 
 
 
-    public String getMessage() {
+    public String getMessage() {                        // ovp 11/13
         return message;
     }
 

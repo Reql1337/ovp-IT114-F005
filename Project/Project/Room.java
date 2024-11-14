@@ -1,4 +1,4 @@
-package Project.server;
+package Project;
 
 import java.util.concurrent.ConcurrentHashMap;
 
