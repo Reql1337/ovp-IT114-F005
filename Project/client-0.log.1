@@ -1,0 +1,39 @@
+11/14/2024 16:29:56 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Client Created
+11/14/2024 16:29:56 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Client starting
+11/14/2024 16:30:02 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Client connected
+11/14/2024 16:30:02 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Received Payload: Payload[CLIENT_ID] Client Id [3] Message: [null] Client Name [Bob] Status [connect]
+11/14/2024 16:30:02 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Received Payload: Payload[ROOM_JOIN] Client Id [3] Message: [lobby] Client Name [Bob] Status [connect]
+11/14/2024 16:30:02 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Received Payload: Payload[SYNC_CLIENT] Client Id [1] Message: [null] Client Name [Bob] Status [connect]
+11/14/2024 16:30:02 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Received Payload: Payload[SYNC_CLIENT] Client Id [2] Message: [null] Client Name [Bob] Status [connect]
+11/14/2024 16:30:18 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Connection dropped
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1093)
+	at java.base/java.io.ObjectInputStream$PeekInputStream.peek(ObjectInputStream.java:2893)
+	at java.base/java.io.ObjectInputStream$BlockDataInputStream.peek(ObjectInputStream.java:3220)
+	at java.base/java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:3230)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1713)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:540)
+	... 9 more elements truncated ...
+
+11/14/2024 16:30:18 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Closing output stream
+11/14/2024 16:30:18 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Closing input stream
+11/14/2024 16:30:18 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Closing connection
+11/14/2024 16:30:18 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m Closed socket
+11/14/2024 16:30:18 [Project.Client.Client] ([32mINFO[0m):
+[34m>[0m listenToServer thread stopped
